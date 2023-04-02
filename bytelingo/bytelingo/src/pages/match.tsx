@@ -2,10 +2,12 @@ import Head from 'next/head'
 import React, {Fragment, useState, SyntheticEvent} from 'react'
 import 'bootstrap/dist/css/bootstrap.css'
 import Header from './header'
-import matchStyles from '../styles/Match.module.css';
+import {useRouter} from "next/router";
+//import matchStyles from '../styles/Match.module.css';
 
 
 export default function Match() {
+  const router = useRouter();
   const firstStateG = "btn btn-outline-success btn-block btn-lg"
   const clickedStateG = "btn btn-success btn-block btn-lg"
   const firstStateY = "btn btn-outline-warning btn-block btn-lg"
@@ -14,6 +16,16 @@ export default function Match() {
   const [left2Color, setLColor2] = useState(firstStateG)
   const [left3Color, setLColor3] = useState(firstStateG)
   const [left4Color, setLColor4] = useState(firstStateG)
+
+  const q1 = "x = x * 2"
+  const q2 = "x = x/x"
+  const q3 = "x = y + 2"
+  const q4 = "x = 50"
+
+  const a1 = "20"
+  const a2 = "1"
+  const a3 = "error"
+  const a4 = "50"
 
   const [right1Color, setRColor1] = useState(firstStateY)
   const [right2Color, setRColor2] = useState(firstStateY)
@@ -76,8 +88,9 @@ export default function Match() {
   const [LR, setLR] = useState([-1,-1])
   const [LRI, setLRI] = useState([-1,-1])
   const [disabled, setDisabled] = useState([false, false, false, false])
+  const [win, setWin] = useState(0)
 
-  const submit = (id: number, match: number) => {
+  const submit = async (id: number, match: number) => {
     if (id > 10) {
       LR[1] = match;
       LRI[1] = id
@@ -89,19 +102,22 @@ export default function Match() {
       if (LR[0] == LR[1]){
         disabled[LR[0]] = true
         setDisabled(disabled)
+        if(win+1 == 4){
+          await router.push('/winpage');
+        }
+        setWin(win+1)
       } else {
         const newLives = lives - 1;
-        //if lives < 0 game over
         setLives(newLives);
         console.log(newLives);
         changeColorB(LRI[0])
         changeColorB(LRI[1])
+        if (newLives < 1){
+          await router.push('/losepage');
+        }
       }
       LR[0] = -1;
       LR[1] = -1;
-    }
-    if(disabled[0] && disabled[1] && disabled[2] && disabled[3]){
-      //win case
     }
   }
   return (
@@ -112,29 +128,29 @@ export default function Match() {
       </Head>
       <Header lives={lives} />
       <br />
-      <h2>ByteLingo: Lesson</h2>
+      <h2>Match Code with Output</h2>
       <main>
         <h3 className="left-0 top-0 text-center">
-          pick
+          if x = 10, what is x after the following code?
             <div className= "position-relative top-8 right-40">
               <div>
-              <button className={left1Color} type="button" id="1" name="align" disabled = {disabled[4]} onClick={() => handleClick(1, 4)}>if</button>
+              <button className={left1Color} type="button" id="1" name="align" disabled = {disabled[4]} onClick={() => handleClick(1, 4)}>{q4}</button>
             </div><div>
-              <button className={left2Color} type="button" id="2" name="align" disabled = {disabled[1]} onClick={() => handleClick(2, 1)}>elif</button>
+              <button className={left2Color} type="button" id="2" name="align" disabled = {disabled[1]} onClick={() => handleClick(2, 1)}>{q1}</button>
             </div><div>
-              <button className={left3Color} type="button" id="3" name="align" disabled = {disabled[2]} onClick={() => handleClick(3, 2)}>else</button>
+              <button className={left3Color} type="button" id="3" name="align" disabled = {disabled[2]} onClick={() => handleClick(3, 2)}>{q2}</button>
             </div><div>
-              <button className={left4Color} type="button" id="4" name="align" disabled = {disabled[3]} onClick={() => handleClick(4, 3)}>if else</button>
+              <button className={left4Color} type="button" id="4" name="align" disabled = {disabled[3]} onClick={() => handleClick(4, 3)}>{q3}</button>
             </div>
           </div> <div className='position-relative bottom-40 left-40'>
             <div>
-              <button className={right1Color} type="button" id="11" name="align" disabled = {disabled[1]} onClick={() => handleClick(11, 1)}>elif</button>
+              <button className={right1Color} type="button" id="11" name="align" disabled = {disabled[1]} onClick={() => handleClick(11, 1)}>{a1}</button>
             </div><div>
-              <button className={right2Color} type="button" id="12" name="align" disabled = {disabled[4]} onClick={() => handleClick(12, 4)}>if</button>
+              <button className={right2Color} type="button" id="12" name="align" disabled = {disabled[4]} onClick={() => handleClick(12, 4)}>{a4}</button>
             </div><div>
-              <button className={right3Color} type="button" id="13" name="align" disabled = {disabled[3]} onClick={() => handleClick(13, 3)}>if else</button>
+              <button className={right3Color} type="button" id="13" name="align" disabled = {disabled[3]} onClick={() => handleClick(13, 3)}>{a3}</button>
             </div><div>
-              <button className={right4Color} type="button" id="14" name="align" disabled = {disabled[2]} onClick={() => handleClick(14, 2)}>else</button>
+              <button className={right4Color} type="button" id="14" name="align" disabled = {disabled[2]} onClick={() => handleClick(14, 2)}>{a2}</button>
             </div>
             </div>
         </h3>

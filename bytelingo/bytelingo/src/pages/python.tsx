@@ -21,25 +21,25 @@ export default function Python() {
             </div>
             <br />
 
-            <div className="mb-5 text-center">
+            <div className="mb-2 text-center">
               <a href="/match">
               <button className={buttonStyles.easy}>Easy</button>
               </a>
             </div>
 
-            <div className="mb-5 text-center">
+            <div className="mb-2 text-center">
               <a href="/swap">
               <button className={buttonStyles.medium}>Medium</button>
               </a>
             </div>
 
-            <div className="mb-5 text-center">
+            <div className="mb-2 text-center">
               <a href="/game">
               <button className={buttonStyles.hard}> Hard</button>
               </a>
             </div>
 
-            <div className="mb-5 text-center">
+            <div className="mt-5 text-center">
             <a href="/">
             <button className={buttonStyles.button} onClick={() => {
               console.log("Hello");
