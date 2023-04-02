@@ -3,7 +3,7 @@ import React, {Fragment, useState, SyntheticEvent} from 'react'
 import 'bootstrap/dist/css/bootstrap.css'
 import Header from './header'
 import {useRouter} from "next/router";
-//import matchStyles from '../styles/Match.module.css';
+import matchStyles from '../styles/Match.module.css';
 
 
 export default function Match() {
