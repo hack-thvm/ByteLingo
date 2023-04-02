@@ -15,7 +15,7 @@
   }
 
   .easy {
-    padding: 20px 20px;
+    padding: 10px 40px;
     background: lightgreen;
     color: #fff;
     font-weight: bold;
@@ -23,9 +23,14 @@
     outline: none;
     border: none;
     cursor: pointer;  }
+  
+  .easy:hover {
+    background: green;
+  }
+  
 
   .medium {
-    padding: 20px 20px;
+    padding: 10px 30px;
     background: lightseagreen;
     color: #fff;
     font-weight: bold;
@@ -33,9 +38,13 @@
     outline: none;
     border: none;
     cursor: pointer;  }
+  
+  .medium:hover {
+    background: turquoise;
+  }  
 
   .hard {
-    padding: 20px 20px;
+    padding: 10px 40px;
     background: lightpink;
     color: #fff;
     font-weight: bold;
@@ -43,4 +52,8 @@
     outline: none;
     border: none;
     cursor: pointer;
+  }
+
+  .hard:hover {
+    background: palevioletred;
   }
