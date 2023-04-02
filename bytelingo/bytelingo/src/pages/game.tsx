@@ -12,7 +12,10 @@ const router = useRouter();
 const submit = async(e: SyntheticEvent) => {
     const newLives = lives - 1;
     if (lives == 1){
-        await router.push('/losepage');
+        await router.push({
+            pathname: '/losepage',
+            query: {game: "game"}
+        });
     }
     setLives(newLives);
     console.log(newLives);
