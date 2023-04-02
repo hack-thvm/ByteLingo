@@ -1,14 +1,19 @@
 import Head from 'next/head'
+import {useRouter} from "next/router";
 import React, {Fragment, SyntheticEvent, useState} from 'react'
 import 'bootstrap/dist/css/bootstrap.css'
-import Header from './header'
+import Header from './header' 
 
-export default function Match() {
+export default function Game() {
 
 const [lives, setLives] = useState(3);
+const router = useRouter();
 
-const submit = () => {
+const submit = async(e: SyntheticEvent) => {
     const newLives = lives - 1;
+    if (lives == 1){
+        await router.push('/losepage');
+    }
     setLives(newLives);
     console.log(newLives);
 }
