@@ -55,7 +55,7 @@ const router = useRouter();
       <Header lives={lives} />
       <main className="bg-white">
         <div className="text-center mt-5">
-          <h1>lesson: swap!! starting ur life of crime here</h1>
+          <h6>Variables are continers which store data inside of them.</h6>
         </div>
         <div className="d-grid gap-2">
           <button className={`btn btn-primary ${selectedButton === 1 ? "active" : ""}`} onClick={() => {setSelectedButton(1)}}>{button1Text}</button>
