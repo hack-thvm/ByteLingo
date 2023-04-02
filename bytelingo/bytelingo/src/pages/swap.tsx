@@ -67,15 +67,15 @@ const router = useRouter();
         </div>
 
         <div className="d-grid gap-2 text-center mt-5">
-          <button className={`btn btn-primary ${selectedButton === 1 ? "active" : ""}`} onClick={() => {setSelectedButton(1)}}>{button1Text}</button>
-          <button className={`btn btn-primary ${selectedButton === 2 ? "active" : ""}`} onClick={() => {setSelectedButton(2)}}>{button2Text}</button>
-          <button className={`btn btn-primary ${selectedButton === 3 ? "active" : ""}`} onClick={() => {setSelectedButton(3)}}>{button3Text}</button>
+          <button className={`btn btn-primary ${selectedButton === 1 ? "active" : ""}`}>{button1Text}</button>
+          <button className={`btn btn-primary ${selectedButton === 2 ? "active" : ""}`}>{button2Text}</button>
+          <button className={`btn btn-primary ${selectedButton === 3 ? "active" : ""}`}>{button3Text}</button>
         </div>
         <div className="d-grid gap-2 text-center mt-5">
-          <button className="btn btn-primary" onClick={() => {swapButton1And2()}}>Swap 1 and 2</button>
-          <button className="btn btn-primary" onClick={() => {swapButton2And3()}}>Swap 2 and 3</button>
-          <button className="btn btn-primary" onClick={() => {swapButton1And3()}}>Swap 1 and 3</button>
-          <button className="btn btn-primary" onClick={() => {checkOrder()}}>Check Order</button>
+          <button className="btn btn-success" onClick={() => {swapButton1And2()}}>Swap 1 and 2</button>
+          <button className="btn btn-success" onClick={() => {swapButton2And3()}}>Swap 2 and 3</button>
+          <button className="btn btn-success" onClick={() => {swapButton1And3()}}>Swap 1 and 3</button>
+          <button className="btn btn-warning" onClick={() => {checkOrder()}}>Check Order</button>
         </div>
       </main>
     </div>
