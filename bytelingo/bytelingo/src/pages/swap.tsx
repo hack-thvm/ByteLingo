@@ -33,9 +33,10 @@ const router = useRouter();
 
   const checkOrder = async(e?: SyntheticEvent) => {
     if (button2Text === "y = 9 + x" && button1Text === "x = 3" && button3Text === "print(y)") {
-      alert("Correct order!");
+    //   alert("Correct order!");
+      await router.push('/winpage');
     } else {
-      alert("Incorrect order.");
+    //   alert("Incorrect order.");
       const newLives = lives - 1;
       if (lives == 1){
           await router.push('/losepage');
@@ -57,10 +58,12 @@ const router = useRouter();
         <div className="text-center mt-5">
           <h1>Next lesson: Variables</h1>
         </div>
-        <div className="mx-5">
+
+        {/* <div className="mx-5">
             <h6>Variables are containers which store data inside of them. Python has no specific command to create a variable; instead, it is created when a value is assigned to it. The following code in the buttons will be executed in sequential order. Order the code so that the sum of x and y is printed out.</h6>
-        </div>
-        <div className="d-grid gap-2">
+        </div> */}
+
+        <div className="d-grid gap-2 text-center ">
           <button className={`btn btn-primary ${selectedButton === 1 ? "active" : ""}`} onClick={() => {setSelectedButton(1)}}>{button1Text}</button>
           <button className={`btn btn-primary ${selectedButton === 2 ? "active" : ""}`} onClick={() => {setSelectedButton(2)}}>{button2Text}</button>
           <button className={`btn btn-primary ${selectedButton === 3 ? "active" : ""}`} onClick={() => {setSelectedButton(3)}}>{button3Text}</button>
