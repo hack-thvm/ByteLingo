@@ -2,11 +2,15 @@ import Head from 'next/head'
 import React, {Fragment} from 'react'
 import 'bootstrap/dist/css/bootstrap.css'
 
-export default function Header() {
+type HeaderProps = {
+  lives: number;
+};
+
+export default function Header({lives} : HeaderProps) {
   return (
     <Fragment>
         <div className="header bg-black text-white absolute left-0 top-0 w-full py-20 text-center">
-            <h2>Lives Left</h2>
+            <h2>Lives Left: {lives}</h2>
         </div>
     </Fragment>
   )
