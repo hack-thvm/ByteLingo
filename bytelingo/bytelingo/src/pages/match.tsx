@@ -115,7 +115,7 @@ export default function Match() {
       <main>
         <h3 className="left-0 top-0 text-center">
           pick
-            <div className= "left-10">
+            <div className= "position-relative top-8 right-40">
               <div>
               <button className={left1Color} type="button" id="1" name="align" disabled = {disabled[4]} onClick={() => handleClick(1, 4)}>if</button>
             </div><div>
@@ -125,7 +125,7 @@ export default function Match() {
             </div><div>
               <button className={left4Color} type="button" id="4" name="align" disabled = {disabled[3]} onClick={() => handleClick(4, 3)}>if else</button>
             </div>
-          </div> <div className='right-10'>
+          </div> <div className='position-relative bottom-40 left-40'>
             <div>
               <button className={right1Color} type="button" id="11" name="align" disabled = {disabled[1]} onClick={() => handleClick(11, 1)}>elif</button>
             </div><div>
