@@ -1,0 +1,8 @@
+/* styles/Layout.module.css */
+.container {
+    max-width: 600px;
+    min-height: 300px;
+    margin: 50px auto;
+    padding: 30px;
+    background: #eeeeee;
+  }
