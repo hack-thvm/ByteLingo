@@ -73,13 +73,16 @@ export default function Match() {
 
   const [lives, setLives] = useState(3);
   const [LR, setLR] = useState([-1,-1])
+  const [LRI, setLRI] = useState([-1,-1])
   const [disabled, setDisabled] = useState([false, false, false, false])
 
   const submit = (id: number, match: number) => {
     if (id > 10) {
       LR[1] = match;
+      LRI[1] = id
     } else {
       LR[0] = match;
+      LRI[0] = id
     }
     if (LR[0] > 0 && LR[1] > 0){
       if (LR[0] == LR[1]){
@@ -90,8 +93,8 @@ export default function Match() {
         //if lives < 0 game over
         setLives(newLives);
         console.log(newLives);
-        changeColorB(LR[0])
-        changeColorB(LR[1])
+        changeColorB(LRI[0])
+        changeColorB(LRI[1])
       }
       LR[0] = -1;
       LR[1] = -1;
