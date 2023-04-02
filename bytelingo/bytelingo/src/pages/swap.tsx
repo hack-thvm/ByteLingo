@@ -11,7 +11,7 @@ const router = useRouter();
   const [button1Text, setButton1Text] = useState("y = 9 + x");
   const [button2Text, setButton2Text] = useState("x = 3");
   const [button3Text, setButton3Text] = useState("print(y)");
-  const [selectedButton, setSelectedButton] = useState(null);
+  const [selectedButton, setSelectedButton] = useState<number | null>(null);
 
   const swapButton1And2 = () => {
     const temp = button1Text;
@@ -31,7 +31,7 @@ const router = useRouter();
     setButton3Text(temp);
   }
 
-  const checkOrder = async(e: SyntheticEvent) => {
+  const checkOrder = async(e?: SyntheticEvent) => {
     if (button2Text === "y = 9 + x" && button1Text === "x = 3" && button3Text === "print(y)") {
       alert("Correct order!");
     } else {
@@ -54,7 +54,7 @@ const router = useRouter();
       </Head>
       <Header lives={lives} />
       <main className="bg-white">
-        <div className="text-center">
+        <div className="text-center mt-5">
           <h1>lesson: swap!! starting ur life of crime here</h1>
         </div>
         <div className="d-grid gap-2">
