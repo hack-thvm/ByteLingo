@@ -8,12 +8,19 @@ export default function Match() {
   const [active, setActive] = useState(false);
   const [leftColor, setColor] = useState([false, false, false, false])
   const [rightColor, setRColor] = useState([false, false, false, false])
-    //"btn btn-outline-success btn-block")
   const handleClick = (id: number) => {
     setActive(!active);
     submit(id)
-    const color = "btn btn-success btn-block"
-    setColor(id,[true])
+    var temp
+    if (id > 10){
+      temp = rightColor
+      temp[id] = true
+      setRColor(temp)
+    } else {
+      temp = leftColor
+      temp[id] = true
+      setColor(temp)
+    }
   };
   const [lives, setLives] = useState(3);
   var [left, right] = [-1,-1]
