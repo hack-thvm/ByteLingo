@@ -1,0 +1,17 @@
+/* styles/Match.module.css */
+.button {
+    padding: 10px 10px;
+    background: rgb(107, 224, 107);
+    color: #fff;
+    font-weight: bold;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    left: 20px;
+  }
+  
+  .button:hover {
+    background: rgb(107, 161, 107);
+  }
