@@ -5,22 +5,39 @@ import Header from './header'
 
 
 export default function Match() {
-  const [active, setActive] = useState(false);
-  const [leftColor, setColor] = useState([false, false, false, false])
-  const [rightColor, setRColor] = useState([false, false, false, false])
+  const [left1Color, setLColor1] = useState("btn btn-outline-success btn-block btn-lg")
+  const [left2Color, setLColor2] = useState("btn btn-outline-success btn-block btn-lg")
+  const [left3Color, setLColor3] = useState("btn btn-outline-success btn-block btn-lg")
+  const [left4Color, setLColor4] = useState("btn btn-outline-success btn-block btn-lg")
+
+  const [right1Color, setRColor1] = useState("btn btn-outline-warning btn-block btn-lg")
+  const [right2Color, setRColor2] = useState("btn btn-outline-warning btn-block btn-lg")
+  const [right3Color, setRColor3] = useState("btn btn-outline-warning btn-block btn-lg")
+  const [right4Color, setRColor4] = useState("btn btn-outline-warning btn-block btn-lg")
+
   const handleClick = (id: number) => {
-    setActive(!active);
-    submit(id)
-    var temp
     if (id > 10){
-      temp = rightColor
-      temp[id] = true
-      setRColor(temp)
+      if (id == 11){
+        setRColor1("btn btn-warning btn-block btn-lg")
+      } else if (id == 12){
+        setRColor2("btn btn-warning btn-block btn-lg")
+      } else if (id == 13){
+        setRColor3("btn btn-warning btn-block btn-lg")
+      } else {
+        setRColor4("btn btn-warning btn-block btn-lg")
+      }
     } else {
-      temp = leftColor
-      temp[id] = true
-      setColor(temp)
+      if (id == 1){
+        setLColor1("btn btn-success btn-block btn-lg")
+      } else if (id == 2){
+        setLColor2("btn btn-success btn-block btn-lg")
+      } else if (id == 3){
+        setLColor3("btn btn-success btn-block btn-lg")
+      } else {
+        setLColor4("btn btn-success btn-block btn-lg")
+      }
     }
+    submit(id)
   };
   const [lives, setLives] = useState(3);
   var [left, right] = [-1,-1]
@@ -54,39 +71,38 @@ export default function Match() {
       </Head>
       <Header lives={lives} />
       <main>
-        <div className="left-0 top-0 text-center">
+        <h3 className="left-0 top-0 text-center">
           pick
-          <div className='btn-group d-grid gap-2'>
-            <div>
-              <button type="button" id="1" name="align" disabled = {disabled[1]} onClick={(e) => handleClick(1)}>if else</button>
-              <label className={leftColor[1] ? "btn btn-outline-success btn-block" : "btn btn-success btn-block"}>elif</label>
+            <div className= "left-10">
+              <div>
+              <button type="button" id="1" name="align" disabled = {disabled[1]} onClick={() => handleClick(1)}/>
+              <label className={left1Color}>if</label>
             </div><div>
-              <input type="button" id="2" name="align" disabled = {disabled[2]} onClick={(e) => handleClick(2)}/>
-              <label className={leftColor[2] ? "btn btn-outline-success btn-block" : "btn btn-success btn-block"}>elif</label>
+              <input type="button" id="2" name="align" disabled = {disabled[2]} onClick={() => handleClick(2)}/>
+              <label className={left2Color}>elif</label>
             </div><div>
-              <input type="button" id="3" name="align" disabled = {disabled[3]} onClick={(e) => handleClick(3)}/>
-              <label className={leftColor[3] ? "btn btn-outline-success btn-block" : "btn btn-success btn-block"}>else</label>
+              <input type="button" id="3" name="align" disabled = {disabled[3]} onClick={() => handleClick(3)}/>
+              <label className={left3Color}>else</label>
             </div><div>
-              <input type="button" id="4" name="align" disabled = {disabled[4]} onClick={(e) => handleClick(4)}/>
-              <label className={leftColor[4] ? "btn btn-outline-success btn-block" : "btn btn-success btn-block"}>else</label>
+              <input type="button" id="4" name="align" disabled = {disabled[4]} onClick={() => handleClick(4)}/>
+              <label className={left4Color}>else</label>
             </div>
-          </div>
-          <div className='btn-group d-grid gap-2'>
+          </div> <div className='right-10'>
             <div>
-              <button type="button" id="11" name="align" disabled = {disabled[1]} onClick={(e) => handleClick(11)}/>
-              <label className={rightColor[1] ? "btn btn-outline-warning btn-block" : "btn btn-warning btn-block"}>if else</label>
+              <button type="button" id="11" name="align" disabled = {disabled[1]} onClick={() => handleClick(11)}/>
+              <label className={right1Color}>if</label>
             </div><div>
-              <input type="button" id="12" name="align" disabled = {disabled[2]} onClick={(e) => handleClick(12)}/>
-              <label className={rightColor[2] ? "btn btn-outline-warning btn-block" : "btn btn-warning btn-block"}>elif</label>
+              <input type="button" id="12" name="align" disabled = {disabled[2]} onClick={() => handleClick(12)}/>
+              <label className={right2Color}>elif</label>
             </div><div>
-              <input type="button" id="13" name="align" disabled = {disabled[3]} onClick={(e) => handleClick(13)}/>
-              <label className={rightColor[3] ? "btn btn-outline-warning btn-block" : "btn btn-warning btn-block"}>else</label>
+              <input type="button" id="13" name="align" disabled = {disabled[3]} onClick={() => handleClick(13)}/>
+              <label className={right3Color}>else</label>
             </div><div>
-              <input type="button" id="14" name="align" disabled = {disabled[4]} onClick={(e) => handleClick(14)}/>
-              <label className={rightColor[4] ? "btn btn-outline-warning btn-block" : "btn btn-warning btn-block"}>else</label>
+              <input type="button" id="14" name="align" disabled = {disabled[4]} onClick={() => handleClick(14)}/>
+              <label className={right4Color}>else</label>
             </div>
-          </div>
-        </div>
+            </div>
+        </h3>
       </main>
     </div>
     </Fragment>
