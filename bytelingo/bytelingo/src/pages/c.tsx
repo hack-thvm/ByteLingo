@@ -14,31 +14,32 @@ export default function C() {
     return (
       <Fragment>
       <div className={layoutStyles.container}>
-            <h2>C Game Levels</h2>
+            <h2 className="text-center">C Game Levels</h2>
 
             <div className={messageStyles.success}>
               Choose a game based on difficulty level.
             </div>
             <br />
 
-            <div className="mb-5">
+            <div className="mb-2 text-center">
               <a href="/match">
               <button className={buttonStyles.easy}>Easy</button>
               </a>
             </div>
 
-            <div className="mb-5">
+            <div className="mb-2 text-center">
               <a href="/swap">
               <button className={buttonStyles.medium}>Medium</button>
               </a>
             </div>
 
-            <div className="mb-5">
+            <div className="mb-2 text-center">
               <a href="/game">
               <button className={buttonStyles.hard}> Hard</button>
               </a>
             </div>
 
+            <div className="mt-5 text-center">
             <a href="/">
             <button className={buttonStyles.button} onClick={() => {
               console.log("Hello");
@@ -47,6 +48,7 @@ export default function C() {
               Home
             </button>
             </a>
+            </div>
       </div>  
       </Fragment>
     )
