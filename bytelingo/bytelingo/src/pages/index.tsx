@@ -65,7 +65,7 @@ export default function Home() {
           </div>
         </div>
         <Image src="/hapy.png" alt="" width={350} height={300}/>
-        <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
+        <button type="button" className="btn btn-success" data-bs-toggle="modal" data-bs-target="#myModal">
           Talk to Byte
         </button>
 

@@ -8,7 +8,9 @@
   /* We use 'composes' to reduce code repetition */
   .success {
     composes: message;
-    background: steelblue;
+    color:black;
+    text-align: center;
+    /* background: steelblue; */
   }
   
   /* We use 'composes' to reduce code repetition */
