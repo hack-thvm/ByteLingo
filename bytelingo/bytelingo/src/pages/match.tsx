@@ -47,6 +47,30 @@ export default function Match() {
       }
     }
   }
+  const changeColorB = (id: number) => {
+    if (id > 10){
+      if (id == 11){
+        setRColor1(firstStateY)
+      } else if (id == 12){
+        setRColor2(firstStateY)
+      } else if (id == 13){
+        setRColor3(firstStateY)
+      } else {
+        setRColor4(firstStateY)
+      }
+    } else {
+      if (id == 1){
+        setLColor1(firstStateG)
+      } else if (id == 2){
+        setLColor2(firstStateG)
+      } else if (id == 3){
+        setLColor3(firstStateG)
+      } else {
+        setLColor4(firstStateG)
+      }
+    }
+  }
+
   const [lives, setLives] = useState(3);
   const [LR, setLR] = useState([-1,-1])
   const [disabled, setDisabled] = useState([false, false, false, false])
@@ -66,9 +90,14 @@ export default function Match() {
         //if lives < 0 game over
         setLives(newLives);
         console.log(newLives);
+        changeColorB(LR[0])
+        changeColorB(LR[1])
       }
       LR[0] = -1;
       LR[1] = -1;
+    }
+    if(disabled[0] && disabled[1] && disabled[2] && disabled[3]){
+      //win case
     }
   }
   return (
