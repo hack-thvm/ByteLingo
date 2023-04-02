@@ -1,5 +1,5 @@
 /* styles/Match.module.css */
-.button {
+.home {
     padding: 10px 10px;
     background: rgb(107, 224, 107);
     color: #fff;
@@ -12,6 +12,6 @@
     left: 20px;
   }
   
-  .button:hover {
+  .home:hover {
     background: rgb(107, 161, 107);
   }

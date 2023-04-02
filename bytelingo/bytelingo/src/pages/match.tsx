@@ -139,19 +139,6 @@ export default function Match() {
         </h3>
       </main>
     </div>
-
-    <div>
-    <a href="/">
-      <button className={matchStyles.button} onClick={() => {
-              console.log("Hello");
-            }}
-            >
-              Home
-            </button>
-    </a>
-    </div>
-
-
     </Fragment>
   )
 }
