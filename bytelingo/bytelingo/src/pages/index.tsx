@@ -1,7 +1,6 @@
 import Head from 'next/head'
 import React from 'react'
 import 'bootstrap/dist/css/bootstrap.css'
-import { Link } from 'react-router-dom';
 
 export default function Home() {
   return (
