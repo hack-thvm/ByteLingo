@@ -3,7 +3,6 @@ import React, {Fragment, useState, SyntheticEvent} from 'react'
 import 'bootstrap/dist/css/bootstrap.css'
 import Header from './header'
 
-
 export default function Match() {
   const firstStateG = "btn btn-outline-success btn-block btn-lg"
   const clickedStateG = "btn btn-success btn-block btn-lg"
