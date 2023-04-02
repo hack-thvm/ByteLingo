@@ -108,10 +108,11 @@ export default function Match() {
     <Fragment>
     <div className="flex min-h-screen flex-col items-center justify-center py-2 bg-gray-100">
     <Head>
-        <title>ByteLingo: Lesson</title>
         <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
       </Head>
       <Header lives={lives} />
+      <br />
+      <h2>ByteLingo: Lesson</h2>
       <main>
         <h3 className="left-0 top-0 text-center">
           pick
