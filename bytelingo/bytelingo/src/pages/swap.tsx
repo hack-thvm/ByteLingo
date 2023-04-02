@@ -59,10 +59,14 @@ const router = useRouter();
       <Header lives={lives} />
       <main className="bg-white">
         <div className="text-center mt-5">
-          <h1>Next lesson: Variables</h1>
+          <h1> </h1>
+          <br />
         </div>
 
         <div className={layoutStyles.container2}>
+        <div className="text-center">
+          <h1>Next lesson: Variables</h1>
+        </div>
             <h6>Variables are containers which store data inside of them. Python has no specific command to create a variable; instead, it is created when a value is assigned to it. The following code in the buttons will be executed in sequential order. Order the code so that the sum of x and y is printed out.</h6>
         </div>
 
