@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import React from 'react'
 import 'bootstrap/dist/css/bootstrap.css'
+import { Link } from 'react-router-dom';
 
 export default function Home() {
   return (
@@ -23,7 +24,9 @@ export default function Home() {
                   An intuitive, high-level language that emphasizes code readability.
                 </div>
                 <div className="mb-5">
+                  <a href="/python">
                   <button type="button" className="btn btn-success">Start</button>
+                  </a>
                 </div>
               </div>
               <div className="grid grid-rows-3 flex justify-center bg-gray-100 border border-gray-600 rounded-lg px-2 py-10 m-2">
@@ -32,7 +35,9 @@ export default function Home() {
                   A programming language that is compatible with many different operating environments.
                 </div>
                 <div className="mb-5">
+                  <a href="/java">
                   <button type="button" className="btn btn-success">Start</button>
+                  </a>
                 </div>                
                 </div>
               <div className="grid grid-rows-3 flex justify-center bg-gray-100 border border-gray-600 rounded-lg px-2 py-10 m-2">
@@ -41,7 +46,9 @@ export default function Home() {
                   A powerful, low-level language that can be used to write flexible code.
                 </div>
                 <div className="mb-5">
+                  <a href="/c">
                   <button type="button" className="btn btn-success">Start</button>
+                  </a>
                 </div>  
                 </div>
             </div> 
