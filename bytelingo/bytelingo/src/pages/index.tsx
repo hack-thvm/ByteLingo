@@ -2,15 +2,10 @@ import Image from 'next/image'
 import Head from 'next/head'
 import React, {useState} from 'react'
 import 'bootstrap/dist/css/bootstrap.css'
-<<<<<<< HEAD
-import styles from "../styles/Home.module.css";
-import styles from "../styles/index.css";
-=======
 import Popup from 'reactjs-popup'
 import 'popper.js'
-
->>>>>>> 11d04a81b4f39124e78a75c4e1ed198d132c954d
-
+import styles from "../styles/Home.module.css";
+import styles from "../styles/index.css";
 
 export default function Home() {
   const [showModal, setShowModal] = useState(false);
