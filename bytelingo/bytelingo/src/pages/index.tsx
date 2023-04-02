@@ -4,7 +4,7 @@ import React, {useState} from 'react'
 import 'bootstrap/dist/css/bootstrap.css'
 import Popup from 'reactjs-popup'
 import 'popper.js'
-import styles from "../styles/Home.module.css";
+//import styles from "../styles/Home.module.css";
 
 export default function Home() {
   const [showModal, setShowModal] = useState(false);
