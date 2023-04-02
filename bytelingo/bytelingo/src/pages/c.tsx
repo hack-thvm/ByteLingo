@@ -7,39 +7,38 @@ import buttonStyles from '../styles/Button.module.css';
 import messageStyles from '../styles/Message.module.css';
 
 
-export default function Python() {
+export default function C() {
     //const name = "ah-ge"
     //const x = true
   
     return (
       <Fragment>
       <div className={layoutStyles.container}>
-            <h2 className="text-center">Python Game Levels</h2>
+            <h2>C Game Levels</h2>
 
             <div className={messageStyles.success}>
               Choose a game based on difficulty level.
             </div>
             <br />
 
-            <div className="mb-5 text-center">
+            <div className="mb-5">
               <a href="/match">
               <button className={buttonStyles.easy}>Easy</button>
               </a>
             </div>
 
-            <div className="mb-5 text-center">
+            <div className="mb-5">
               <a href="/swap">
               <button className={buttonStyles.medium}>Medium</button>
               </a>
             </div>
 
-            <div className="mb-5 text-center">
+            <div className="mb-5">
               <a href="/game">
               <button className={buttonStyles.hard}> Hard</button>
               </a>
             </div>
 
-            <div className="mb-5 text-center">
             <a href="/">
             <button className={buttonStyles.button} onClick={() => {
               console.log("Hello");
@@ -48,7 +47,6 @@ export default function Python() {
               Home
             </button>
             </a>
-            </div>
       </div>  
       </Fragment>
     )
