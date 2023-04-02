@@ -2,6 +2,8 @@ import Head from 'next/head'
 import React, {Fragment, useState, SyntheticEvent} from 'react'
 import 'bootstrap/dist/css/bootstrap.css'
 import Header from './header'
+import matchStyles from '../styles/Match.module.css';
+
 
 export default function Match() {
   const firstStateG = "btn btn-outline-success btn-block btn-lg"
@@ -134,6 +136,19 @@ export default function Match() {
         </h3>
       </main>
     </div>
+
+    <div>
+    <a href="/">
+      <button className={matchStyles.button} onClick={() => {
+              console.log("Hello");
+            }}
+            >
+              Home
+            </button>
+    </a>
+    </div>
+
+
     </Fragment>
   )
 }
