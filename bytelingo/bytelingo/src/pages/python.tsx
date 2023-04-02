@@ -22,13 +22,13 @@ export default function Python() {
             <br />
 
             <div className="mb-2 text-center">
-              <a href="/match">
+              <a href="/swap">
               <button className={buttonStyles.easy}>Easy</button>
               </a>
             </div>
 
             <div className="mb-2 text-center">
-              <a href="/swap">
+              <a href="/match">
               <button className={buttonStyles.medium}>Medium</button>
               </a>
             </div>
