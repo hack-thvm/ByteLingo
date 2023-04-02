@@ -18,9 +18,9 @@ export default function Match() {
   const [right3Color, setRColor3] = useState(firstStateY)
   const [right4Color, setRColor4] = useState(firstStateY)
 
-  const handleClick = (id: number) => {
+  const handleClick = (id: number, match: number) => {
     changeColor(id)
-    submit(id)
+    submit(id, match)
   };
 
   const changeColor = (id: number) => {
@@ -74,11 +74,11 @@ export default function Match() {
   const [LR, setLR] = useState([-1,-1])
   const [disabled, setDisabled] = useState([false, false, false, false])
 
-  const submit = (id: number) => {
+  const submit = (id: number, match: number) => {
     if (id > 10) {
-      LR[1] = (id - 10);
+      LR[1] = match;
     } else {
-      LR[0] = id;
+      LR[0] = match;
     }
     if (LR[0] > 0 && LR[1] > 0){
       if (LR[0] == LR[1]){
@@ -112,23 +112,23 @@ export default function Match() {
           pick
             <div className= "left-10">
               <div>
-              <button className={left1Color} type="button" id="1" name="align" disabled = {disabled[1]} onClick={() => handleClick(1)}>if</button>
+              <button className={left1Color} type="button" id="1" name="align" disabled = {disabled[4]} onClick={() => handleClick(1, 4)}>if</button>
             </div><div>
-              <button className={left2Color} type="button" id="2" name="align" disabled = {disabled[2]} onClick={() => handleClick(2)}>elif</button>
+              <button className={left2Color} type="button" id="2" name="align" disabled = {disabled[1]} onClick={() => handleClick(2, 1)}>elif</button>
             </div><div>
-              <button className={left3Color} type="button" id="3" name="align" disabled = {disabled[3]} onClick={() => handleClick(3)}>else</button>
+              <button className={left3Color} type="button" id="3" name="align" disabled = {disabled[2]} onClick={() => handleClick(3, 2)}>else</button>
             </div><div>
-              <button className={left4Color} type="button" id="4" name="align" disabled = {disabled[4]} onClick={() => handleClick(4)}>else</button>
+              <button className={left4Color} type="button" id="4" name="align" disabled = {disabled[3]} onClick={() => handleClick(4, 3)}>if else</button>
             </div>
           </div> <div className='right-10'>
             <div>
-              <button className={right1Color} type="button" id="11" name="align" disabled = {disabled[1]} onClick={() => handleClick(11)}>else</button>
+              <button className={right1Color} type="button" id="11" name="align" disabled = {disabled[1]} onClick={() => handleClick(11, 1)}>elif</button>
             </div><div>
-              <button className={right2Color} type="button" id="12" name="align" disabled = {disabled[2]} onClick={() => handleClick(12)}>else</button>
+              <button className={right2Color} type="button" id="12" name="align" disabled = {disabled[4]} onClick={() => handleClick(12, 4)}>if</button>
             </div><div>
-              <button className={right3Color} type="button" id="13" name="align" disabled = {disabled[3]} onClick={() => handleClick(13)}>else</button>
+              <button className={right3Color} type="button" id="13" name="align" disabled = {disabled[3]} onClick={() => handleClick(13, 3)}>if else</button>
             </div><div>
-              <button className={right4Color} type="button" id="14" name="align" disabled = {disabled[4]} onClick={() => handleClick(14)}>else</button>
+              <button className={right4Color} type="button" id="14" name="align" disabled = {disabled[2]} onClick={() => handleClick(14, 2)}>else</button>
             </div>
             </div>
         </h3>
