@@ -3,6 +3,9 @@ import 'bootstrap/dist/css/bootstrap.css'
 import Header from './header'
 import React, { useState, SyntheticEvent } from 'react'
 import {useRouter} from "next/router";
+import layoutStyles from '../styles/Layout.module.css';
+import buttonStyles from '../styles/Button.module.css';
+
 
 export default function Swap() {
 const [lives, setLives] = useState(3);
@@ -59,11 +62,11 @@ const router = useRouter();
           <h1>Next lesson: Variables</h1>
         </div>
 
-        {/* <div className="mx-5">
+        <div className={layoutStyles.container2}>
             <h6>Variables are containers which store data inside of them. Python has no specific command to create a variable; instead, it is created when a value is assigned to it. The following code in the buttons will be executed in sequential order. Order the code so that the sum of x and y is printed out.</h6>
-        </div> */}
+        </div>
 
-        <div className="d-grid gap-2 text-center ">
+        <div className="d-grid gap-2 text-center mt-5">
           <button className={`btn btn-primary ${selectedButton === 1 ? "active" : ""}`} onClick={() => {setSelectedButton(1)}}>{button1Text}</button>
           <button className={`btn btn-primary ${selectedButton === 2 ? "active" : ""}`} onClick={() => {setSelectedButton(2)}}>{button2Text}</button>
           <button className={`btn btn-primary ${selectedButton === 3 ? "active" : ""}`} onClick={() => {setSelectedButton(3)}}>{button3Text}</button>
